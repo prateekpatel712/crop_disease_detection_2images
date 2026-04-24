@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local runtime artifacts
+logs/
+uploads/
+*.pid
+
+# Local agent files
+AGENT_MEMORY.md
+
+# Model artifacts and generated indices
+models/
+rag_data/vector_store/
+
+# Environment files
+.env
+.env.*

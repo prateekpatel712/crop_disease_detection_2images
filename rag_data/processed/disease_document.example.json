@@ -1,0 +1,36 @@
+{
+  "documents": [
+    {
+      "id": "tomato_early_blight",
+      "crop": "Tomato",
+      "disease": "Early Blight",
+      "aliases": ["Alternaria solani infection"],
+      "summary": "Early blight is a fungal disease that causes dark concentric lesions on leaves and can reduce yield when unmanaged.",
+      "symptoms": [
+        "dark brown spots with concentric rings",
+        "yellowing around leaf lesions",
+        "progressive leaf drop"
+      ],
+      "causes": [
+        "fungal infection favored by warm humid conditions",
+        "infected crop debris in the field"
+      ],
+      "treatment": [
+        "remove heavily infected leaves",
+        "apply recommended fungicide according to local guidance"
+      ],
+      "precautions": [
+        "avoid overhead irrigation when possible",
+        "sanitize tools after handling infected plants"
+      ],
+      "prevention": [
+        "rotate crops",
+        "maintain field sanitation",
+        "improve airflow between plants"
+      ],
+      "severity": "medium",
+      "source": "example-reference",
+      "tags": ["fungal", "field_management"]
+    }
+  ]
+}
