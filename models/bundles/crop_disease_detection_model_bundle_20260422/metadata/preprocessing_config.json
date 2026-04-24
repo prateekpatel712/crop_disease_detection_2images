@@ -1,0 +1,14 @@
+{
+  "color_mode": "RGB",
+  "image_size": 224,
+  "resize_shorter_side": 255,
+  "center_crop": [224, 224],
+  "normalize_mean": [0.485, 0.456, 0.406],
+  "normalize_std": [0.229, 0.224, 0.225],
+  "feature_extractor": "torchvision.models.efficientnet_b0",
+  "feature_source": "penultimate pooled features before classifier",
+  "notes": [
+    "Resize is implemented as int(image_size * 1.14).",
+    "The saved refined model uses the hierarchical path with blend_weight 0.0."
+  ]
+}

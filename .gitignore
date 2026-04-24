@@ -26,6 +26,11 @@ AGENT_MEMORY.md
 
 # Model artifacts and generated indices
 models/
+!models/
+models/*
+!models/bundles/
+!models/bundles/crop_disease_detection_model_bundle_20260422/
+!models/bundles/crop_disease_detection_model_bundle_20260422/**
 rag_data/vector_store/
 
 # Environment files

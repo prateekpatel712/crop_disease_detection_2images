@@ -1,0 +1,395 @@
+{
+  "config": {
+    "batch_size": 64,
+    "num_workers": 0,
+    "image_size": 224,
+    "c_grid": [
+      0.1,
+      0.3,
+      1.0,
+      3.0,
+      10.0
+    ],
+    "crop_scale_grid": [
+      0.5,
+      1.0,
+      1.5,
+      2.0
+    ],
+    "blend_grid": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "joint_alpha_grid": [
+      -0.5,
+      0.0,
+      0.5,
+      1.0,
+      1.5
+    ],
+    "joint_beta_grid": [
+      0.0,
+      0.2,
+      0.4,
+      0.6,
+      0.8,
+      1.0
+    ]
+  },
+  "cleanup_report": {
+    "original_train_rows": 93861,
+    "removed_leakage_rows": 1226,
+    "relabeled_conflict_rows": 0,
+    "unresolved_conflict_rows": 950,
+    "train_conflict_groups": 264,
+    "cross_split_leakage_groups": 376
+  },
+  "cleanup_weight_report": {
+    "suspicious_rows": 14804,
+    "severe_suspicious_rows": 7280,
+    "min_weight": 0.15,
+    "mean_weight": 0.7553915235328094
+  },
+  "joint_selection": {
+    "alpha": 0.5,
+    "beta": 0.8,
+    "val_accuracy": 0.9044293015332198,
+    "val_macro_f1": 0.9256758795434998,
+    "selection_score": 0.9193019061404157
+  },
+  "blend_selection": {
+    "crop_scale": 0.5,
+    "blend_weight": 0.0,
+    "val_accuracy": 0.9494889267461669,
+    "val_macro_f1": 0.9529243572984328
+  },
+  "baseline_test_metrics": {
+    "accuracy": 0.8788316209561009,
+    "macro_f1": 0.8885177275910711,
+    "weighted_f1": 0.8793984214283925
+  },
+  "final_test_metrics": {
+    "accuracy": 0.9468455464040079,
+    "macro_f1": 0.9375672844821757,
+    "weighted_f1": 0.9464395751248437
+  },
+  "per_crop_models": [
+    {
+      "crop": "bhindi",
+      "selected_c": 0.1,
+      "val_accuracy": 1.0,
+      "val_macro_f1": 1.0,
+      "class_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "model_path": "/home/jupyter/combined_plant_dataset_normalized/professional_hierarchical_outputs/per_crop_models/bhindi_disease_head.joblib"
+    },
+    {
+      "crop": "blackgram",
+      "selected_c": 1.0,
+      "val_accuracy": 1.0,
+      "val_macro_f1": 1.0,
+      "class_ids": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "model_path": "/home/jupyter/combined_plant_dataset_normalized/professional_hierarchical_outputs/per_crop_models/blackgram_disease_head.joblib"
+    },
+    {
+      "crop": "brinjal",
+      "selected_c": 0.1,
+      "val_accuracy": 0.9972144846796658,
+      "val_macro_f1": 0.9980436865933049,
+      "class_ids": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "model_path": "/home/jupyter/combined_plant_dataset_normalized/professional_hierarchical_outputs/per_crop_models/brinjal_disease_head.joblib"
+    },
+    {
+      "crop": "cabbage",
+      "selected_c": 10.0,
+      "val_accuracy": 0.9740470397404704,
+      "val_macro_f1": 0.9737922118312954,
+      "class_ids": [
+        18,
+        19,
+        20,
+        21
+      ],
+      "model_path": "/home/jupyter/combined_plant_dataset_normalized/professional_hierarchical_outputs/per_crop_models/cabbage_disease_head.joblib"
+    },
+    {
+      "crop": "cauliflower",
+      "selected_c": 0.1,
+      "val_accuracy": 1.0,
+      "val_macro_f1": 1.0,
+      "class_ids": [
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "model_path": "/home/jupyter/combined_plant_dataset_normalized/professional_hierarchical_outputs/per_crop_models/cauliflower_disease_head.joblib"
+    },
+    {
+      "crop": "chilli",
+      "selected_c": 1.0,
+      "val_accuracy": 0.9883720930232558,
+      "val_macro_f1": 0.9847222222222222,
+      "class_ids": [
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "model_path": "/home/jupyter/combined_plant_dataset_normalized/professional_hierarchical_outputs/per_crop_models/chilli_disease_head.joblib"
+    },
+    {
+      "crop": "cotton",
+      "selected_c": 3.0,
+      "val_accuracy": 0.9672897196261683,
+      "val_macro_f1": 0.9700152666255353,
+      "class_ids": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42
+      ],
+      "model_path": "/home/jupyter/combined_plant_dataset_normalized/professional_hierarchical_outputs/per_crop_models/cotton_disease_head.joblib"
+    },
+    {
+      "crop": "cowpea",
+      "selected_c": 0.1,
+      "val_accuracy": 1.0,
+      "val_macro_f1": 1.0,
+      "class_ids": [
+        43,
+        44,
+        45,
+        46
+      ],
+      "model_path": "/home/jupyter/combined_plant_dataset_normalized/professional_hierarchical_outputs/per_crop_models/cowpea_disease_head.joblib"
+    },
+    {
+      "crop": "groundnut",
+      "selected_c": 10.0,
+      "val_accuracy": 0.9857397504456328,
+      "val_macro_f1": 0.9862822362468321,
+      "class_ids": [
+        47,
+        48,
+        49,
+        50,
+        51,
+        52
+      ],
+      "model_path": "/home/jupyter/combined_plant_dataset_normalized/professional_hierarchical_outputs/per_crop_models/groundnut_disease_head.joblib"
+    },
+    {
+      "crop": "maize",
+      "selected_c": 0.1,
+      "val_accuracy": 0.9143904063957362,
+      "val_macro_f1": 0.9151926020565002,
+      "class_ids": [
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61
+      ],
+      "model_path": "/home/jupyter/combined_plant_dataset_normalized/professional_hierarchical_outputs/per_crop_models/maize_disease_head.joblib"
+    },
+    {
+      "crop": "onion",
+      "selected_c": 10.0,
+      "val_accuracy": 0.9696969696969697,
+      "val_macro_f1": 0.9710045483049532,
+      "class_ids": [
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74
+      ],
+      "model_path": "/home/jupyter/combined_plant_dataset_normalized/professional_hierarchical_outputs/per_crop_models/onion_disease_head.joblib"
+    },
+    {
+      "crop": "pigeonpea",
+      "selected_c": 3.0,
+      "val_accuracy": 0.7466666666666667,
+      "val_macro_f1": 0.7636926565497995,
+      "class_ids": [
+        75,
+        76,
+        77,
+        78
+      ],
+      "model_path": "/home/jupyter/combined_plant_dataset_normalized/professional_hierarchical_outputs/per_crop_models/pigeonpea_disease_head.joblib"
+    },
+    {
+      "crop": "ragi",
+      "selected_c": 0.1,
+      "val_accuracy": 0.983739837398374,
+      "val_macro_f1": 0.9836785168605928,
+      "class_ids": [
+        79,
+        80,
+        81,
+        82,
+        83,
+        84
+      ],
+      "model_path": "/home/jupyter/combined_plant_dataset_normalized/professional_hierarchical_outputs/per_crop_models/ragi_disease_head.joblib"
+    },
+    {
+      "crop": "rice",
+      "selected_c": 0.1,
+      "val_accuracy": 1.0,
+      "val_macro_f1": 1.0,
+      "class_ids": [
+        85,
+        86,
+        87
+      ],
+      "model_path": "/home/jupyter/combined_plant_dataset_normalized/professional_hierarchical_outputs/per_crop_models/rice_disease_head.joblib"
+    },
+    {
+      "crop": "sorghum",
+      "selected_c": 10.0,
+      "val_accuracy": 0.9986225895316805,
+      "val_macro_f1": 0.9973186409550046,
+      "class_ids": [
+        88,
+        89,
+        90,
+        91,
+        92,
+        93
+      ],
+      "model_path": "/home/jupyter/combined_plant_dataset_normalized/professional_hierarchical_outputs/per_crop_models/sorghum_disease_head.joblib"
+    },
+    {
+      "crop": "soyabean",
+      "selected_c": 0.1,
+      "val_accuracy": 0.9888268156424581,
+      "val_macro_f1": 0.9691093220504985,
+      "class_ids": [
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103
+      ],
+      "model_path": "/home/jupyter/combined_plant_dataset_normalized/professional_hierarchical_outputs/per_crop_models/soyabean_disease_head.joblib"
+    },
+    {
+      "crop": "sugarcane",
+      "selected_c": 0.1,
+      "val_accuracy": 0.9108187134502924,
+      "val_macro_f1": 0.8636279023342678,
+      "class_ids": [
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114
+      ],
+      "model_path": "/home/jupyter/combined_plant_dataset_normalized/professional_hierarchical_outputs/per_crop_models/sugarcane_disease_head.joblib"
+    },
+    {
+      "crop": "sunflower",
+      "selected_c": 0.1,
+      "val_accuracy": 0.9761904761904762,
+      "val_macro_f1": 0.9781633571107256,
+      "class_ids": [
+        115,
+        116,
+        117,
+        118
+      ],
+      "model_path": "/home/jupyter/combined_plant_dataset_normalized/professional_hierarchical_outputs/per_crop_models/sunflower_disease_head.joblib"
+    },
+    {
+      "crop": "tomato",
+      "selected_c": 0.3,
+      "val_accuracy": 0.982363315696649,
+      "val_macro_f1": 0.9823429254658296,
+      "class_ids": [
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128
+      ],
+      "model_path": "/home/jupyter/combined_plant_dataset_normalized/professional_hierarchical_outputs/per_crop_models/tomato_disease_head.joblib"
+    },
+    {
+      "crop": "wheat",
+      "selected_c": 0.3,
+      "val_accuracy": 1.0,
+      "val_macro_f1": 1.0,
+      "class_ids": [
+        129,
+        130,
+        131,
+        132,
+        133
+      ],
+      "model_path": "/home/jupyter/combined_plant_dataset_normalized/professional_hierarchical_outputs/per_crop_models/wheat_disease_head.joblib"
+    }
+  ]
+}

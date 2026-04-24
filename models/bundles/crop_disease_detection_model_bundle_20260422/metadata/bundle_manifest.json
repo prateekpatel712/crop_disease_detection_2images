@@ -1,0 +1,34 @@
+{
+  "bundle_name": "crop_disease_detection_model_bundle_20260422",
+  "created_date_utc": "2026-04-22",
+  "num_crops": 20,
+  "num_classes": 134,
+  "artifacts": {
+    "backbone_checkpoint": "models/best_model.pt",
+    "crop_router": "models/crop_router_refinement.joblib",
+    "per_crop_heads_dir": "models/per_crop_heads",
+    "id_to_label": "metadata/id_to_label.json",
+    "label_to_id": "metadata/label_to_id.json",
+    "crop_order": "metadata/crop_order.json",
+    "preprocessing_config": "metadata/preprocessing_config.json",
+    "pipeline_summary": "metadata/pipeline_summary.json",
+    "crop_router_refinement_summary": "metadata/crop_router_refinement_summary.json"
+  },
+  "class_order_rule": "ascending integer key order from metadata/id_to_label.json",
+  "selected_inference_settings": {
+    "crop_scale": 0.4,
+    "blend_weight": 0.0,
+    "router_standardize": true,
+    "router_class_weight": "none",
+    "router_selected_c": 0.03
+  },
+  "flow": [
+    "preprocess_image",
+    "extract_backbone_features",
+    "predict_crop_log_probs",
+    "predict_per_crop_disease_log_probs",
+    "combine_scores",
+    "softmax_over_134_classes",
+    "map_class_id_to_label"
+  ]
+}

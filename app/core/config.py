@@ -106,14 +106,17 @@ class Settings:
     base_dir: Path = field(
         default_factory=lambda: Path(__file__).resolve().parents[2]
     )
+    runtime_data_dir: Path = field(
+        default_factory=lambda: Path(__file__).resolve().parents[2]
+    )
 
     @property
     def uploads_dir(self) -> Path:
-        return self.base_dir / "uploads"
+        return self.runtime_data_dir / "uploads"
 
     @property
     def logs_dir(self) -> Path:
-        return self.base_dir / "logs"
+        return self.runtime_data_dir / "logs"
 
     @property
     def prediction_audit_log_path(self) -> Path:
@@ -149,18 +152,12 @@ class Settings:
 
     @property
     def rag_vector_store_dir(self) -> Path:
-        return self.base_dir / "rag_data" / "vector_store"
+        return self.runtime_data_dir / "rag_data" / "vector_store"
 
     def ensure_runtime_dirs(self) -> None:
         runtime_dirs = (
             self.uploads_dir,
             self.logs_dir,
-            self.crop_model_dir,
-            self.disease_model_dir,
-            self.model_metadata_dir,
-            self.model_bundles_dir,
-            self.rag_raw_dir,
-            self.rag_processed_dir,
             self.rag_vector_store_dir,
         )
 
@@ -173,6 +170,12 @@ def get_settings() -> Settings:
     base_dir = Path(__file__).resolve().parents[2]
     env_file_values = _load_env_file(base_dir / ".env")
     env = {**env_file_values, **os.environ}
+    runtime_data_dir_value = _get_str(env, "APP_DATA_DIR", "")
+    runtime_data_dir = (
+        Path(runtime_data_dir_value).expanduser()
+        if runtime_data_dir_value
+        else base_dir
+    )
 
     api_key = _get_str(env, "API_KEY", "")
     require_api_key = _get_bool(env, "REQUIRE_API_KEY", bool(api_key))
@@ -210,4 +213,5 @@ def get_settings() -> Settings:
         api_key=api_key,
         require_api_key=require_api_key,
         base_dir=base_dir,
+        runtime_data_dir=runtime_data_dir,
     )

@@ -1,0 +1,88 @@
+{
+  "cleanup_report": {
+    "original_train_rows": 93861,
+    "removed_leakage_rows": 1226,
+    "relabeled_conflict_rows": 0,
+    "unresolved_conflict_rows": 950,
+    "train_conflict_groups": 264,
+    "cross_split_leakage_groups": 376
+  },
+  "router_search_config": {
+    "router_c_grid": [
+      0.03,
+      0.1,
+      0.3,
+      1.0,
+      3.0,
+      10.0
+    ],
+    "router_scale_grid": [
+      0.25,
+      0.4,
+      0.5,
+      0.6,
+      0.75,
+      1.0
+    ],
+    "blend_grid": [
+      0.0,
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.25
+    ],
+    "router_standardize_grid": [
+      true,
+      false
+    ],
+    "router_class_weight_grid": [
+      "none",
+      "balanced"
+    ],
+    "max_iter": 1000
+  },
+  "prior_stage_joint_selection": {
+    "alpha": 0.5,
+    "beta": 0.8,
+    "val_accuracy": 0.9044293015332198,
+    "val_macro_f1": 0.9256758795434998,
+    "selection_score": 0.9193019061404157
+  },
+  "prior_stage_hierarchical_test_accuracy": 0.9468455464040079,
+  "crop_router_selection": {
+    "standardize": true,
+    "class_weight": "none",
+    "selected_c": 0.03,
+    "crop_scale": 0.4,
+    "blend_weight": 0.0,
+    "val_accuracy": 0.9582623509369677,
+    "val_macro_f1": 0.9591935558261232,
+    "crop_val_accuracy": 0.996252129471891,
+    "crop_val_macro_f1": 0.994784606953979,
+    "model_path": "/home/jupyter/combined_plant_dataset_normalized/professional_hierarchical_outputs/crop_router_refinement.joblib"
+  },
+  "crop_router_validation_metrics": {
+    "accuracy": 0.996252129471891,
+    "macro_f1": 0.994784606953979
+  },
+  "crop_router_test_metrics": {
+    "accuracy": 0.9970281056296171,
+    "macro_f1": 0.9957229272602073
+  },
+  "baseline_test_metrics": {
+    "accuracy": 0.8788316209561009,
+    "macro_f1": 0.8885177275910711,
+    "weighted_f1": 0.8793984214283925
+  },
+  "stage1_hierarchical_test_metrics": {
+    "accuracy": 0.9468455464040079,
+    "macro_f1": 0.9375672844821757,
+    "weighted_f1": 0.9464395751248437
+  },
+  "final_test_metrics": {
+    "accuracy": 0.9532988027511251,
+    "macro_f1": 0.9443104099886896,
+    "weighted_f1": 0.9529886607151606
+  }
+}
