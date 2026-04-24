@@ -24,11 +24,7 @@ from app.services.model_registry import ModelRegistry
 from app.services.rag_service import RAGService
 
 settings = get_settings()
-router = APIRouter(
-    prefix=settings.api_prefix,
-    tags=["crop-disease-detection"],
-    dependencies=[Depends(require_api_key)],
-)
+router = APIRouter(prefix=settings.api_prefix, tags=["crop-disease-detection"])
 audit_logger = PipelineAuditLogger(
     prediction_log_path=settings.prediction_audit_log_path,
     feedback_log_path=settings.feedback_log_path,
@@ -116,6 +112,7 @@ def healthcheck() -> HealthResponse:
 async def predict(
     crop_image: UploadFile = File(..., description="Healthy or reference crop leaf image."),
     diseased_image: UploadFile = File(..., description="Diseased leaf image used for diagnosis."),
+    _: None = Depends(require_api_key),
 ) -> PipelineResponse:
     storage_service = UploadStorageService(settings.uploads_dir)
     crop_original_filename = crop_image.filename or "crop-image"
@@ -165,7 +162,10 @@ async def predict(
 
 
 @router.post("/feedback", response_model=FeedbackResponse)
-def submit_feedback(payload: FeedbackRequest) -> FeedbackResponse:
+def submit_feedback(
+    payload: FeedbackRequest,
+    _: None = Depends(require_api_key),
+) -> FeedbackResponse:
     try:
         audit_logger.log_feedback_event(payload.model_dump())
     except OSError as exc:  # pragma: no cover - defensive API guard

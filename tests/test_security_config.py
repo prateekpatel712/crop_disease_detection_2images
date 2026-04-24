@@ -45,12 +45,18 @@ class SecurityConfigTests(unittest.TestCase):
         get_settings.cache_clear()
         client = TestClient(create_application())
 
-        unauthorized_response = client.get("/api/v1/health")
-        authorized_response = client.get(
-            "/api/v1/health",
+        public_health_response = client.get("/api/v1/health")
+        unauthorized_response = client.post(
+            "/api/v1/feedback",
+            json={"request_id": "req-1", "verdict": "correct"},
+        )
+        authorized_response = client.post(
+            "/api/v1/feedback",
+            json={"request_id": "req-1", "verdict": "correct"},
             headers={"X-API-Key": "top-secret"},
         )
 
+        self.assertEqual(public_health_response.status_code, 200)
         self.assertEqual(unauthorized_response.status_code, 401)
         self.assertEqual(authorized_response.status_code, 200)
 
