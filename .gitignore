@@ -31,3 +31,4 @@ rag_data/vector_store/
 # Environment files
 .env
 .env.*
+!.env.example

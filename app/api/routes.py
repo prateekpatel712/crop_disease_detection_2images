@@ -2,9 +2,10 @@ from __future__ import annotations
 
 from uuid import uuid4
 
-from fastapi import APIRouter, File, HTTPException, UploadFile
+from fastapi import APIRouter, Depends, File, HTTPException, UploadFile
 
 from app.core.config import get_settings
+from app.core.security import require_api_key
 from app.graph.state import build_initial_state
 from app.graph.workflow import invoke_dual_image_pipeline
 from app.schemas.api import (
@@ -23,7 +24,11 @@ from app.services.model_registry import ModelRegistry
 from app.services.rag_service import RAGService
 
 settings = get_settings()
-router = APIRouter(prefix=settings.api_prefix, tags=["crop-disease-detection"])
+router = APIRouter(
+    prefix=settings.api_prefix,
+    tags=["crop-disease-detection"],
+    dependencies=[Depends(require_api_key)],
+)
 audit_logger = PipelineAuditLogger(
     prediction_log_path=settings.prediction_audit_log_path,
     feedback_log_path=settings.feedback_log_path,
