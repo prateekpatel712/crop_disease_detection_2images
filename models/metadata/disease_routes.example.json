@@ -1,0 +1,15 @@
+{
+  "default_model_key": "generic",
+  "routes": [
+    {
+      "crop_name": "Tomato",
+      "aliases": ["tomato leaf"],
+      "model_key": "tomato"
+    },
+    {
+      "crop_name": "Rice",
+      "aliases": ["paddy"],
+      "model_key": "rice"
+    }
+  ]
+}

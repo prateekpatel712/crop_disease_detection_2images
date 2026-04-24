@@ -1,0 +1,61 @@
+{
+  "task": "crop_name_detection",
+  "stage": "healthy_leaf_crop_classification",
+  "registered_model_name": "best_model.pt",
+  "source_path": "C:/Users/techb/Downloads/best_model (1).pt",
+  "registered_date": "2026-04-21",
+  "sha256": "8cd9c172d7b4e42b890e285e3ecb266a91887803723e3f8e3b63c9aca7cab0bc",
+  "format": "torch_checkpoint_zip",
+  "checkpoint_observations": {
+    "top_level_signals": [
+      "model_state_dict",
+      "best_val_macro_f1",
+      "epoch",
+      "stage",
+      "finetune"
+    ],
+    "architecture_hint": "torchvision-efficientnet-like classifier backbone",
+    "contains_full_runtime_loader": false
+  },
+  "runtime": {
+    "backend": "torchvision_image_classifier",
+    "architecture": "efficientnet_auto",
+    "candidate_architectures": [
+      "efficientnet_b0",
+      "efficientnet_b1",
+      "efficientnet_b2",
+      "efficientnet_b3",
+      "efficientnet_b4",
+      "efficientnet_v2_s"
+    ],
+    "checkpoint_key": "model_state_dict",
+    "input_size": [
+      224,
+      224
+    ],
+    "normalization": {
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ]
+    },
+    "labels_required": true,
+    "assumption_note": "These runtime defaults are Phase 6 assumptions based on a torchvision-style EfficientNet training flow and should be verified against the original training code before production use."
+  },
+  "missing_for_runtime": [
+    "crop class label map",
+    "dependency validation for torch and torchvision in the serving environment"
+  ],
+  "notes": [
+    "This is the first crop model artifact added to the project.",
+    "The file is registered and discoverable by the current model registry.",
+    "Phase 6 adds an auto-matching torchvision runtime, but named inference still requires the real crop label map.",
+    "The checkpoint should be validated against the original training code before production deployment."
+  ]
+}

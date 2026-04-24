@@ -28,10 +28,18 @@ AGENT_MEMORY.md
 models/
 !models/
 models/*
+!models/crop/
+!models/crop/**
+!models/disease/
+!models/disease/**
+!models/metadata/
+!models/metadata/**
 !models/bundles/
 !models/bundles/crop_disease_detection_model_bundle_20260422/
 !models/bundles/crop_disease_detection_model_bundle_20260422/**
 rag_data/vector_store/
+!rag_data/vector_store/
+!rag_data/vector_store/**
 
 # Environment files
 .env

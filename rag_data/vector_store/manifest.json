@@ -1,0 +1,14 @@
+{
+  "built_at": "2026-04-23T13:48:46.162614+00:00",
+  "knowledge_signature": [
+    [
+      "C:\\Users\\techb\\OneDrive\\Desktop\\crop_disease_detection\\rag_data\\processed\\disease_records.jsonl",
+      1776951188645272600,
+      338846
+    ]
+  ],
+  "chunk_count": 2259,
+  "embedding_backend": "tfidf_svd_dense_v1",
+  "vectorizer_backend": "sklearn_tfidf",
+  "distance_metric": "cosine"
+}
